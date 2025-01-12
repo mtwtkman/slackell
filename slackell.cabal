@@ -16,6 +16,7 @@ executable example
     req,
     slackell,
     text,
+    time,
 
   default-language: Haskell2010
   main-is: Main.hs
