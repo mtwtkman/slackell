@@ -41,7 +41,7 @@ perform r = runReq defaultHttpConfig $ responseBody <$> r
 get :: (FromJSON a, MonadIO m) => String -> String -> Maybe (Option 'Https) -> m a
 get auth endpoint opt = perform $ getReq auth endpoint opt
 
-post :: (FromJSON a, MonadHttp m, HttpBody body) => String -> String -> body -> Maybe (Option 'Https) -> m a
+post :: (FromJSON a, MonadIO m, HttpBody body) => String -> String -> body -> Maybe (Option 'Https) -> m a
 post auth endpoint body opt = perform $ postReq auth endpoint body opt
 
 authHeader :: String -> Option scheme
